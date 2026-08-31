@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exams</title>
+
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/exam.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="Exam">
+
+    <div id="navbar-container"></div>
+
+    <script src="../js/component.js"></script>
+    <script src="../js/image-modal.js"></script>
+
+
+    <!-- EXAM PAGE -->
+    <main class="exam-page">
+
+        <section class="exam-header">
+
+            <p class="section-label">ASSESSMENTS</p>
+
+            <h1>Exams</h1>
+
+            <p class="exam-description">
+                A collection of examinations I've completed.
+            </p>
+
+        </section>
+
+
+        <!-- EXAM GRID -->
+        <section class="exam-grid">
+
+
+            <!-- HTML EXAM -->
+            <article class="exam-card">
+
+                <div class="exam-image">
+
+                    <img
+                        src=""
+                        alt="Midterm Preview"
+                        onclick="openImage(this)"
+                    >
+
+                </div>
+
+
+                <div class="exam-content">
+
+                    <span class="exam-number">
+                        Mid-Term
+                    </span>
+
+                    <h3>
+                        N/A
+                    </h3>
+                    <div class="exam-info">
+
+                        <span>Exam</span>
+
+                        <span>n/a</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CSS EXAM -->
+            <article class="exam-card">
+
+                <div class="exam-image">
+
+                    <img
+                        src=""
+                        alt="Final Preview"
+                        onclick="openImage(this)"
+                    >
+
+                </div>
+
+
+                <div class="exam-content">
+
+                    <span class="exam-number">
+                        Final
+                    </span>
+
+                    <h3>
+                        N/A
+                    </h3>
+                    <div class="exam-info">
+
+                        <span>Exam</span>
+
+                        <span>n/a</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- IMAGE VIEWER -->
+    <div
+        id="image-viewer"
+        class="image-viewer"
+        onclick="closeImage()"
+    >
+
+        <span class="close-image">&times;</span>
+
+        <img
+            id="viewer-image"
+            src=""
+            alt="Exam Preview"
+        >
+
+    </div>
+
+</body>
+</html>
+

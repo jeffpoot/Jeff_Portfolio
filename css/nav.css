@@ -1,0 +1,51 @@
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin-left: 2rem;
+}
+
+.navbar ul li a {
+    font-family: 'DM Mono', monospace;
+    font-size: clamp(13px, 1.2vw, 18px);
+    font-weight: 500;
+    color: #032A27;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover{
+    background-color: #032A27;
+    padding: 0.5em;
+    color: white;
+    border-radius: 30px;
+}
+
+.Home a.active , .Quizzes a.active , .Laboratory a.active, .Exam a.active{
+    background-color: #032a27b3;
+    padding: 0.5em;
+    color: white;
+    border-radius: 30px;
+}

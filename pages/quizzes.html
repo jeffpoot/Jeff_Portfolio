@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quizzes</title>
+
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/quizzes.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="Quizzes">
+
+    <div id="navbar-container"></div>
+    <script src="../js/component.js"></script>
+    <script src="../js/image-modal.js"></script>
+
+    <!-- QUIZZES -->
+    <main class="quizzes-page">
+
+        <section class="quizzes-header">
+            <p class="section-label">MY WORK</p>
+            <h1>Quizzes</h1>
+            <p class="quizzes-description">
+                A collection of quizzes and activities I've created.
+            </p>
+        </section>
+
+
+        <section class="quiz-grid">
+
+            <!-- QUIZ 1 -->
+            <article class="quiz-card">
+
+                <div class="quiz-image">
+                    <img src="../img/quiz1.jpg" alt="Quiz 1 preview" onclick="openImage(this)">
+                </div>
+
+                <div class="quiz-content">
+                    <span class="quiz-number">QUIZ 01</span>
+
+                    <h3>Emerging Technologies Quiz 1</h3>
+                    <div class="quiz-info">
+                        <span>📚 Quiz</span>
+                        <span>14/20</span>
+                    </div>
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- IMAGE VIEWER -->
+    <div id="image-viewer" class="image-viewer" onclick="closeImage()">
+    <span class="close-image">&times;</span>
+
+    <img id="viewer-image" src="" alt="Quiz Preview">
+</div>
+</body>
+</html>

@@ -1,0 +1,1853 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-color: #176153;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: calc(100vw * (1600 / 960));
+    background: url('img/Scenery_GIF.gif_With_underwater.gif')
+        top center / 100% 100% no-repeat;
+    image-rendering: pixelated;
+    z-index: -1;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    height: 42vw;
+    min-height: 500px;
+    max-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
+.hero-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-info .profile_container,
+.image-container,
+.Carousel-container,
+.Carousel-container-soft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-info .profile_container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.Profile-image {
+    width: clamp(100px, 15vw, 200px);
+    height: auto;
+    object-fit: contain;
+}
+
+.hero h1 {
+    margin: 0;
+
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 4.5rem;
+    font-weight: bold;
+
+    text-align: center;
+
+    color: #044743;
+
+    text-shadow:
+        2px 2px 0 #d7d6d6;
+
+    transition: all 0.3s ease;
+}
+
+.hero .Greeting {
+    width: 50%;
+    margin: 40px 0 0;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 1.5rem;
+
+    color: #617d49;
+
+    text-align: center;
+}
+
+.hero .Description {
+    width: 40%;
+    height: 100%;
+    padding: 20px;
+
+    font-family: 'DM Mono', monospace;
+    font-style: bold;
+
+    color: #e0e0e0;
+
+    text-align: center;
+
+    /* QUIZZES STYLE */
+    background: rgba(3, 42, 39, 0.80);
+
+    border: 2px solid rgba(255, 255, 255, 0.394);
+    border-radius: 20px;
+
+    box-shadow:
+        0 4px 4px rgba(0, 0, 0, 0.649);
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.hero .social ul {
+    margin-top: 2em;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .social ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+.hero .Button-section {
+    width: 50%;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .Button-section .about-btn {
+    width: 70%;
+    max-width: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 30px;
+    box-sizing: border-box;
+
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: clamp(1.1rem, 1.4vw, 1.5rem);
+
+    text-align: center;
+
+    color: #ffffffcb;
+    background-color: #DA6E6C;
+
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 55px;
+
+    box-shadow:
+        0 4px 4px rgba(0, 0, 0, 0.649);
+
+    opacity: 90%;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+
+.hero .Button-section .btn:hover,
+.hero .Button-section .about-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+
+    box-shadow:
+        0 7px 10px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   ABOUT ME
+========================================================= */
+
+:root {
+    --background-width: 960;
+    --background-height: 1600;
+    --ocean-y: 900;
+}
+
+.about-me {
+    position: absolute;
+
+    top: calc(
+        100vw * (var(--ocean-y) / var(--background-width))
+    );
+
+    width: 100%;
+}
+
+.about-me p,
+.about-me span,
+.about-me li {
+    color: white;
+}
+
+.about-me-title {
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 2em;
+
+    text-align: center;
+
+    color: #044743;
+
+    text-shadow:
+        2px 2px 0 #d7d6d6;
+}
+
+.about-me-context-container {
+    width: calc(100% - 10em);
+    max-width: 2371px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 0.1fr)
+        minmax(0, 0.9fr);
+
+    align-items: center;
+
+    gap: 1rem;
+
+    box-sizing: border-box;
+}
+
+.right-about-me {
+    box-sizing: border-box;
+
+    justify-content: center;
+
+    font-family: 'DM Mono', monospace;
+}
+
+.image-container {
+    width: 100%;
+}
+
+.breaker-horizontal {
+    width: 50%;
+    height: 5px;
+
+    margin: 1em auto;
+
+    background: rgba(255, 255, 255, 0.394);
+
+    border-radius: 50px;
+}
+
+.breaker-vertical {
+    width: 5px;
+    height: 90%;
+
+    justify-self: center;
+    align-self: center;
+
+    background: rgba(255, 255, 255, 0.394);
+
+    border-radius: 50px;
+}
+
+.right-about-me .carousel-text {
+    width: 100%;
+
+    margin: 1em auto;
+
+    font-size: 2.5em;
+
+    text-align: center;
+
+    color: white;
+
+    font-family: 'Silkscreen', sans-serif;
+
+    text-shadow:
+        2px 2px 0 rgba(3, 42, 39, 0.5);
+}
+
+
+/* =========================================================
+   ABOUT ME ANIMATION
+========================================================= */
+
+.about-animate {
+    opacity: 0;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.about-animate.from-left {
+    transform: translateX(-100px);
+}
+
+.about-animate.from-right {
+    transform: translateX(100px);
+}
+
+.about-animate.from-bottom {
+    transform: translateY(80px);
+}
+
+.about-animate.fade {
+    transform: scale(0.85);
+}
+
+.about-animate.show {
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   LANGUAGE CAROUSEL
+========================================================= */
+
+.Carousel-container {
+    width: 100%;
+}
+
+.carousel {
+    width: 50%;
+    padding: 20px 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    /* QUIZZES STYLE */
+    background: rgba(3, 42, 39, 0.35);
+
+    border: 2px solid rgba(255, 255, 255, 0.394);
+    border-radius: 20px;
+
+    box-sizing: border-box;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1.2em;
+    padding-right: 1em;
+
+    flex-shrink: 0;
+
+    animation: spin 50s linear infinite;
+}
+
+.card {
+    flex: 0 0 clamp(80px, 7.5vw, 120px);
+
+    height: clamp(80px, 9vw, 120px);
+
+    padding: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2em;
+
+    color: #044743;
+
+    background: rgba(74, 173, 99, 0.90);
+
+    border: 2px solid #176153;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 4px rgba(0, 0, 0, 0.35);
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 7px 8px rgba(0, 0, 0, 0.40);
+}
+
+@keyframes spin {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* =========================================================
+   ABOUT ME TEXT
+========================================================= */
+
+.paragraph-text {
+    width: 100%;
+
+    margin: 1em auto;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 1.2em;
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-container {
+    width: 80%;
+
+    margin: 50px auto 3em;
+    padding: 1em;
+
+    display: flex;
+
+    gap: 2em;
+
+    /* QUIZZES STYLE */
+    background: rgba(3, 42, 39, 0.35);
+
+    border: 2px solid rgba(255, 255, 255, 0.394);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 4px 4px rgba(0, 0, 0, 0.30);
+
+    box-sizing: border-box;
+}
+
+.contact-container ul {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1em;
+
+    font-size: 1em;
+
+    font-family: 'DM Mono', monospace;
+}
+
+.contact-container li,
+.contact-container a {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   SOFTWARE CAROUSEL
+========================================================= */
+
+.Carousel-container-soft {
+    width: 100%;
+}
+
+.carousel-soft {
+    width: 70%;
+    height: 400px;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    overflow: hidden;
+
+    /* QUIZZES STYLE */
+    background: rgba(3, 42, 39, 0.35);
+
+    border: 2px solid rgba(255, 255, 255, 0.394);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 4px 4px rgba(0, 0, 0, 0.30);
+
+    box-sizing: border-box;
+}
+
+.group-soft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.group-soft .card {
+    width: clamp(80px, 7.5vw, 120px);
+    height: clamp(80px, 9vw, 120px);
+
+    padding: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    background: #044743;
+
+    border: 2px solid #176153;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 4px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.group-soft .card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 7px 8px rgba(0, 0, 0, 0.40);
+}
+
+.group-soft .card i {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.group-soft .card span {
+    margin-top: 8px;
+
+    font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+.group-soft.up {
+    animation: scroll-up 50s linear infinite;
+}
+
+.group-soft.down {
+    animation: scroll-down 50s linear infinite;
+}
+
+@keyframes scroll-up {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(calc(-50% - 1em));
+    }
+}
+
+@keyframes scroll-down {
+
+    from {
+        transform: translateY(calc(-50% - 1em));
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   MOBILE - 767px AND BELOW
+========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    /* HERO */
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero .Greeting {
+        width: 70%;
+        margin-top: 20px;
+
+        font-size: clamp(0.75rem, 2.5vw, 1rem);
+    }
+
+    .hero .Name {
+        max-width: 100%;
+
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
+    }
+
+    .hero .Description {
+        width: 75%;
+        max-width: 75%;
+
+        padding: 12px;
+
+        box-sizing: border-box;
+
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
+    }
+
+    .hero .Button-section {
+        width: 90%;
+    }
+
+    .Profile-image {
+        margin-top: 3rem;
+    }
+
+
+    /* NAVBAR */
+
+    .navbar {
+        padding: 30px 0;
+
+        box-sizing: border-box;
+    }
+
+    .navbar ul {
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        justify-content: center;
+
+        box-sizing: border-box;
+    }
+
+    .navbar ul li {
+        margin: 0 0.35rem;
+    }
+
+    .navbar ul li a {
+        font-size: clamp(9px, 2.5vw, 14px);
+    }
+
+
+    /* ABOUT ME */
+
+    .about-me {
+        top: max(
+            calc(
+                100vw *
+                (var(--ocean-y) / var(--background-width))
+            ),
+            600px
+        );
+
+        overflow: hidden;
+    }
+
+    .about-me-title {
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+
+        font-size: clamp(1.2rem, 5vw, 2rem);
+    }
+
+    .about-me > .breaker-horizontal,
+    .right-about-me .breaker-horizontal {
+        width: 70%;
+        max-width: 300px;
+
+        box-sizing: border-box;
+    }
+
+    .breaker-horizontal {
+        height: 4px;
+    }
+
+    .about-me-context-container {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0 20px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 2.5rem;
+
+        box-sizing: border-box;
+    }
+
+
+    /* LEFT */
+
+    .left-about-me {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        box-sizing: border-box;
+    }
+
+    .image-container {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+    }
+
+    #aboutme-pic {
+        display: block;
+
+        width: clamp(120px, 35vw, 180px);
+        max-width: 100%;
+
+        height: auto;
+
+        margin: 0 auto;
+    }
+
+
+    /* CONTACT */
+
+    .contact-container {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 30px 0 2em;
+        padding: 1em;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-sizing: border-box;
+    }
+
+    .contact-container ul {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 1rem;
+
+        font-size: clamp(0.75rem, 3vw, 1rem);
+
+        box-sizing: border-box;
+    }
+
+    .contact-container li,
+    .contact-container a {
+        max-width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 12px;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* PARAGRAPH */
+
+    .paragraph-text {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 1em 0;
+        padding: 0;
+
+        font-size: clamp(0.85rem, 3vw, 1.1rem);
+        line-height: 1.6;
+
+        text-align: center;
+
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        box-sizing: border-box;
+    }
+
+
+    /* DIVIDER */
+
+    .about-me-context-container > .breaker-vertical {
+        width: 70%;
+        max-width: 300px;
+
+        height: 4px;
+
+        margin: 0;
+
+        justify-self: auto;
+        align-self: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* RIGHT */
+
+    .right-about-me {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        box-sizing: border-box;
+    }
+
+    .right-about-me .carousel-text {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 1em 0;
+        padding: 0;
+
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        line-height: 1.3;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* LANGUAGE CAROUSEL */
+
+    .Carousel-container {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+    }
+
+    .carousel {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 0;
+        padding: 15px 10px;
+
+        justify-content: flex-start;
+
+        box-sizing: border-box;
+    }
+
+    .group {
+        gap: 0.8em;
+        padding-right: 0.8em;
+    }
+
+    .card {
+        flex: 0 0 75px;
+
+        width: 75px;
+        height: 75px;
+
+        box-sizing: border-box;
+
+        font-size: 1.5em;
+    }
+
+    .card span {
+        font-size: 0.7rem;
+    }
+
+
+    /* SOFTWARE CAROUSEL */
+
+    .Carousel-container-soft {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+    }
+
+    .carousel-soft {
+        width: 100%;
+        max-width: 500px;
+
+        height: 300px;
+
+        margin: 0;
+        padding: 15px;
+
+        gap: 10px;
+
+        box-sizing: border-box;
+    }
+
+    .group-soft {
+        gap: 15px;
+
+        flex-shrink: 0;
+    }
+
+    .group-soft .card {
+        width: 65px;
+        height: 65px;
+
+        padding: 0.4rem;
+
+        box-sizing: border-box;
+    }
+
+    .group-soft .card i {
+        font-size: 1.8rem;
+    }
+
+    .group-soft .card span {
+        margin-top: 5px;
+
+        font-size: 0.6rem;
+    }
+
+
+    /* ANIMATION */
+
+    .about-animate {
+        opacity: 0;
+
+        transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
+
+        will-change: transform, opacity;
+    }
+
+    .about-animate.from-left {
+        transform: translate3d(-40px, 0, 0);
+    }
+
+    .about-animate.from-right {
+        transform: translate3d(40px, 0, 0);
+    }
+
+    .about-animate.from-bottom {
+        transform: translateY(50px);
+    }
+
+    .about-animate.fade {
+        transform: scale(0.85);
+    }
+
+    .about-animate.show {
+        opacity: 1;
+
+        transform:
+            translate3d(0, 0, 0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   TABLET - 768px TO 1023px
+========================================================= */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        width: 100%;
+        min-height: 600px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-sizing: border-box;
+    }
+
+    .hero-info {
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+    .hero .Greeting {
+        width: 70%;
+
+        margin-top: 20px;
+
+        font-size: clamp(0.75rem, 2.5vw, 1rem);
+    }
+
+    .hero .Name {
+        max-width: 100%;
+
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
+    }
+
+    .hero .Description {
+        width: 75%;
+        max-width: 75%;
+
+        padding: 12px;
+
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
+
+        box-sizing: border-box;
+    }
+
+    .hero .Button-section {
+        width: 90%;
+    }
+
+    .Profile-image {
+        margin-top: 3rem;
+    }
+
+
+    /* NAVBAR */
+
+    .navbar {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 30px 0;
+
+        box-sizing: border-box;
+    }
+
+    .navbar ul {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+    }
+
+    .navbar ul li {
+        margin: 0 0.35rem;
+    }
+
+    .navbar ul li a {
+        font-size: clamp(9px, 2.5vw, 14px);
+    }
+
+
+    /* ABOUT ME */
+
+    .about-me {
+        top: max(
+            calc(
+                100vw *
+                (var(--ocean-y) / var(--background-width))
+            ),
+            600px
+        );
+
+        overflow: hidden;
+    }
+
+    .about-me-title {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        font-size: clamp(1.2rem, 5vw, 2rem);
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+    .about-me > .breaker-horizontal {
+        width: 70%;
+        max-width: 300px;
+
+        margin: 1em auto;
+
+        box-sizing: border-box;
+    }
+
+    .about-me-context-container {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0 20px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 2.5rem;
+
+        box-sizing: border-box;
+    }
+
+    .left-about-me,
+    .right-about-me {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+    }
+
+    .left-about-me {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+    #aboutme-pic {
+        display: block;
+
+        width: clamp(120px, 35vw, 180px);
+        max-width: 100%;
+
+        height: auto;
+
+        margin: 0 auto;
+    }
+
+
+    /* CONTACT */
+
+    .contact-container {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 30px 0 2em;
+        padding: 1em;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        box-sizing: border-box;
+    }
+
+    .contact-container ul {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 1rem;
+
+        font-size: clamp(0.75rem, 3vw, 1rem);
+
+        box-sizing: border-box;
+    }
+
+    .contact-container li,
+    .contact-container a {
+        max-width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 12px;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* PARAGRAPH */
+
+    .paragraph-text {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 1em 0;
+        padding: 0;
+
+        font-size: clamp(0.85rem, 3vw, 1.1rem);
+
+        line-height: 1.6;
+
+        text-align: center;
+
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        box-sizing: border-box;
+    }
+
+    .about-me-context-container > .breaker-vertical {
+        width: 70%;
+        max-width: 300px;
+
+        height: 4px;
+
+        margin: 0;
+
+        align-self: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* RIGHT */
+
+    .right-about-me {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right-about-me .carousel-text {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 1em 0;
+        padding: 0;
+
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        line-height: 1.3;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+    .right-about-me .breaker-horizontal {
+        width: 70%;
+        max-width: 300px;
+
+        margin: 1em auto;
+    }
+
+
+    /* CAROUSELS */
+
+    .Carousel-container,
+    .Carousel-container-soft {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+    }
+
+    .carousel {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 0;
+        padding: 15px 10px;
+
+        justify-content: flex-start;
+
+        box-sizing: border-box;
+    }
+
+    .group {
+        gap: 0.8em;
+        padding-right: 0.8em;
+    }
+
+    .card {
+        flex: 0 0 75px;
+
+        width: 75px;
+        height: 75px;
+
+        box-sizing: border-box;
+
+        font-size: 1.5em;
+    }
+
+    .card span {
+        font-size: 0.7rem;
+    }
+
+    .carousel-soft {
+        width: 100%;
+        max-width: 500px;
+
+        height: 300px;
+
+        padding: 15px;
+
+        box-sizing: border-box;
+    }
+
+    .group-soft {
+        gap: 15px;
+
+        flex-shrink: 0;
+    }
+
+    .group-soft .card {
+        width: 65px;
+        height: 65px;
+
+        padding: 0.4rem;
+
+        box-sizing: border-box;
+    }
+
+    .group-soft .card i {
+        font-size: 1.8rem;
+    }
+
+    .group-soft .card span {
+        margin-top: 5px;
+
+        font-size: 0.6rem;
+    }
+
+
+    /* ANIMATION */
+
+    .about-animate.from-left {
+        transform: translateX(-40px);
+    }
+
+    .about-animate.from-right {
+        transform: translateX(40px);
+    }
+
+    .about-animate.from-bottom {
+        transform: translateY(40px);
+    }
+
+    .about-animate.show {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   SMALL DESKTOP - 1024px TO 1199px
+========================================================= */
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+
+    .hero .Greeting {
+        margin-top: 30px;
+
+        font-size: clamp(0.9rem, 1vw, 1.2rem);
+    }
+
+    .hero .Name {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+    }
+
+    .hero .Description {
+        width: 45%;
+
+        padding: 20px;
+
+        font-size: clamp(0.9rem, 1vw, 1.1rem);
+    }
+
+
+    .about-me {
+        width: 100%;
+
+        overflow: hidden;
+    }
+
+    .about-me-context-container {
+        width: 90%;
+        max-width: none;
+
+        margin: 0 auto;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 0.05fr)
+            minmax(0, 1fr);
+
+        gap: 1rem;
+    }
+
+    .left-about-me,
+    .right-about-me {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .paragraph-text {
+        font-size: clamp(1rem, 1.3vw, 1.3rem);
+    }
+
+    .right-about-me .carousel-text {
+        font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    }
+
+    .carousel,
+    .carousel-soft {
+        width: 90%;
+    }
+
+    .contact-container {
+        width: 90%;
+    }
+
+    .contact-container ul {
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP - 1200px+
+========================================================= */
+
+@media screen and (min-width: 1200px) {
+
+    .hero .Greeting {
+        margin-top: 30px;
+
+        font-size: clamp(0.9rem, 1vw, 1.2rem);
+    }
+
+    .hero .Name {
+        font-size: clamp(2.5rem, 4vw, 4.5rem);
+    }
+
+    .hero .Description {
+        width: 40%;
+
+        padding: 20px;
+
+        font-size: clamp(0.9rem, 1vw, 1.1rem);
+    }
+
+    .navbar {
+        width: 100%;
+        margin: 0;
+    }
+
+    .hero .Button-section .btn,
+    .hero .Button-section .about-btn {
+        padding:
+            clamp(6px, 1vw, 20px)
+            clamp(9px, 1.5vw, 20px);
+    }
+
+    .Profile-image {
+        margin-top: 3rem;
+    }
+
+    .about-me {
+        width: 100%;
+
+        overflow: hidden;
+    }
+
+    .about-me-context-container {
+        width: calc(100% - 10em);
+        max-width: 2371px;
+
+        margin: 0 auto;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 0.1fr)
+            minmax(0, 0.9fr);
+
+        gap: 1rem;
+    }
+
+    .left-about-me,
+    .right-about-me {
+        min-width: 0;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP - SHORT SCREENS
+========================================================= */
+
+@media screen and (min-width: 1200px) and (max-height: 900px) {
+
+    .navbar {
+        padding: 25px 0;
+    }
+
+    .navbar ul li {
+        margin-left: 1.5rem;
+    }
+
+    .navbar ul li a {
+        font-size: clamp(12px, 1.1vw, 16px);
+    }
+
+    .hero {
+        width: 100%;
+
+        height: 600px;
+        min-height: 600px;
+        max-height: 650px;
+
+        box-sizing: border-box;
+    }
+
+    .hero-info {
+        width: 100%;
+        max-width: 1100px;
+
+        box-sizing: border-box;
+    }
+
+    .Profile-image {
+        width: clamp(110px, 12vw, 160px);
+
+        margin-top: 1.5rem;
+    }
+
+    .hero .Greeting {
+        width: 60%;
+
+        margin-top: 15px;
+
+        font-size: clamp(0.85rem, 1.1vw, 1.1rem);
+    }
+
+    .hero .Name,
+    .hero h1 {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+
+        line-height: 1.1;
+    }
+
+    .hero .Description {
+        width: 45%;
+        max-width: 600px;
+
+        padding: 15px;
+
+        font-size: clamp(0.85rem, 1vw, 1rem);
+        line-height: 1.5;
+
+        box-sizing: border-box;
+    }
+
+    .hero .social ul {
+        margin-top: 1.2em;
+    }
+
+    .hero .social ul li {
+        margin: 0 15px;
+    }
+
+    .hero .Button-section {
+        width: 55%;
+
+        margin-top: 8px;
+        gap: 8px;
+
+        justify-content: center;
+    }
+
+    .hero .Button-section .btn,
+    .hero .Button-section .about-btn {
+        padding: 10px 14px;
+
+        font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+
+        gap: 12px;
+    }
+
+
+    /* ABOUT ME */
+
+    .about-me-context-container {
+        width: 90%;
+        max-width: 1500px;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 0.06fr)
+            minmax(0, 1fr);
+
+        gap: 1rem;
+
+        box-sizing: border-box;
+    }
+
+    .left-about-me,
+    .right-about-me {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #aboutme-pic {
+        width: clamp(150px, 15vw, 220px);
+
+        max-width: 100%;
+
+        height: auto;
+    }
+
+    .about-me-title {
+        font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+    }
+
+    .paragraph-text {
+        width: 100%;
+
+        font-size: clamp(0.9rem, 1.15vw, 1.15rem);
+
+        line-height: 1.5;
+
+        overflow-wrap: break-word;
+    }
+
+    .contact-container {
+        width: 95%;
+
+        margin: 30px auto 2em;
+        padding: 0.8em;
+
+        box-sizing: border-box;
+    }
+
+    .contact-container ul {
+        font-size: clamp(0.8rem, 1vw, 1rem);
+
+        gap: 0.7em;
+    }
+
+    .right-about-me .carousel-text {
+        font-size: clamp(1.4rem, 2.2vw, 2rem);
+
+        line-height: 1.2;
+    }
+
+    .carousel {
+        width: 95%;
+
+        padding: 12px 20px;
+
+        box-sizing: border-box;
+    }
+
+    .card {
+        flex: 0 0 clamp(70px, 6vw, 100px);
+
+        width: clamp(70px, 6vw, 100px);
+        height: clamp(70px, 7vw, 100px);
+
+        font-size: 1em;
+    }
+
+    .carousel-soft {
+        width: 90%;
+
+        height: 320px;
+
+        padding: 15px;
+
+        box-sizing: border-box;
+    }
+
+    .group-soft {
+        gap: 15px;
+    }
+
+    .group-soft .card {
+        width: clamp(70px, 6vw, 100px);
+        height: clamp(70px, 7vw, 100px);
+    }
+
+    .group-soft .card i {
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+    }
+
+    .group-soft .card span {
+        font-size: clamp(0.65rem, 0.8vw, 0.9rem);
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-animate {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+    .group,
+    .group-soft.up,
+    .group-soft.down {
+        animation: none;
+    }
+
+    .hero .Description,
+    .hero .Button-section .btn,
+    .hero .Button-section .about-btn,
+    .card,
+    .group-soft .card {
+        transition: none;
+    }
+}

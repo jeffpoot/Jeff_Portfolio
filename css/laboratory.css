@@ -1,0 +1,370 @@
+
+/* ================================
+   LABORATORY PAGE
+================================ */
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+    background-color: #176153;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: url('../img/Spring_sceneryGIF.gif')
+        bottom center / cover no-repeat;
+
+    image-rendering: pixelated;
+
+    z-index: -1;
+}
+
+
+/* ================================
+   LINKS
+================================ */
+
+a {
+    text-decoration: none;
+}
+
+a.active {
+    background-color: #032A27;
+    padding: 0.5em;
+    color: white;
+    border-radius: 30px;
+    font-family: "DM Mono", monospace;
+}
+
+
+/* ================================
+   MAIN PAGE
+================================ */
+
+.laboratory-page {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+
+    padding-top: 120px;
+    padding-bottom: 100px;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.laboratory-header {
+    text-align: center;
+    margin-bottom: 55px;
+
+    font-family: "DM Mono", monospace;
+}
+
+.section-label {
+    margin: 0 0 10px;
+
+    font-family: "Silkscreen", sans-serif;
+    font-size: 20px;
+
+    color: #032A27;
+    letter-spacing: 2px;
+}
+
+.laboratory-header h1 {
+    margin: 0;
+
+    font-family: "Silkscreen", sans-serif;
+    font-size: clamp(35px, 5vw, 60px);
+
+    color: #032A27;
+
+    text-shadow:
+        2px 2px 0px #f3e8bd;
+}
+
+
+/* ================================
+   LABORATORY GRID
+================================ */
+
+.laboratory-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 35px;
+
+    align-items: stretch;
+}
+
+
+/* ================================
+   LABORATORY CARD
+================================ */
+
+.laboratory-card {
+    overflow: hidden;
+
+    background: rgba(223, 171, 223, 0.92);
+
+    border: 3px solid #032A27;
+
+    box-shadow:
+        7px 7px 0px rgba(3, 42, 39, 0.45);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Pixel-style hover */
+
+.laboratory-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        10px 12px 0px rgba(3, 42, 39, 0.5);
+}
+
+
+/* ================================
+   LABORATORY IMAGE
+================================ */
+
+.laboratory-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+
+    background-color: #872447a9;
+
+    border-bottom: 3px solid #032A27;
+}
+
+.laboratory-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    image-rendering: pixelated;
+
+    transition: transform 0.3s ease;
+}
+
+.laboratory-card:hover .laboratory-image img {
+    transform: scale(1.03);
+}
+
+
+/* ================================
+   LABORATORY CONTENT
+================================ */
+
+.laboratory-content {
+    padding: 25px 28px 28px;
+
+    font-family: "DM Mono", monospace;
+}
+
+.laboratory-number {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-family: "Silkscreen", sans-serif;
+    font-size: 11px;
+
+    color: #176153;
+}
+
+.laboratory-content h3 {
+    margin: 0 0 12px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 22px;
+
+    color: #032A27;
+}
+
+.laboratory-content p {
+    margin: 0;
+
+    color: #31534d;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   CARD INFORMATION
+================================ */
+
+.laboratory-info {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 25px;
+    padding-top: 15px;
+
+    border-top: 2px dashed rgba(3, 42, 39, 0.3);
+
+    font-size: 12px;
+
+    color: #176153;
+}
+
+
+/* ================================
+   IMAGE VIEWER
+================================ */
+
+.image-viewer {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    cursor: zoom-out;
+}
+
+.image-viewer img {
+    max-width: 90%;
+    max-height: 90%;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    cursor: default;
+}
+
+.close-image {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    font-family: Arial, sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 10000;
+
+    transition: transform 0.2s ease;
+}
+
+.close-image:hover {
+    transform: scale(1.15);
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 800px) {
+
+    .laboratory-page {
+        width: min(650px, 88%);
+
+        padding-top: 100px;
+    }
+
+    .laboratory-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .laboratory-image {
+        height: 280px;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 500px) {
+
+    .laboratory-page {
+        width: 90%;
+
+        padding-top: 90px;
+        padding-bottom: 70px;
+    }
+
+    .laboratory-header {
+        margin-bottom: 35px;
+    }
+
+    .laboratory-header h1 {
+        font-size: 35px;
+    }
+
+    .laboratory-description {
+        font-size: 13px;
+    }
+
+    .laboratory-grid {
+        gap: 25px;
+    }
+
+    .laboratory-image {
+        height: 210px;
+    }
+
+    .laboratory-content {
+        padding: 20px;
+    }
+
+    .laboratory-content h2 {
+        font-size: 18px;
+    }
+
+    .laboratory-content p {
+        font-size: 12px;
+    }
+
+    .laboratory-info {
+        font-size: 10px;
+    }
+}
+
